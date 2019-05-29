@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+#define M        998244353
+#define pb       push_back
+#define mxpq     priority_queue <int>
+#define mnpq     priority_queue<int,vector<int>,greater<int>>
+#define S(v)     sort(v.begin(),v.end())
+#define RS(v)    sort(v.rbegin(),v.rend())
+#define print(a) printf("%.16f\n", ans);
+#define maxi     LLONG_MAX
+#define mini     LLONG_MIN
+#define T        int tc;cin>>tc;while(tc--)
+#define int      long long 
+#define MAXN     10000001 
+#define fio      cin.sync_with_stdio(false) ; cin.tie(0);cout.tie(0) ;
+#define endl     "\n"
+using namespace std;
+int32_t main()  
+{
+    fio ;
+    
+}
