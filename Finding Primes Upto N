@@ -1,0 +1,16 @@
+vector<int> getprimes(int n){
+    vector<int> sieve(n) ;
+    for(int i=2;;i++){
+        if(i>sieve.size()) break ;
+        if(sieve[i]!=0) continue ;
+        for(int j=2;;j++){
+            if(i*j>sieve.size()) break ;
+            sieve[i*j]=1 ;
+        }
+    }
+    vector<int> ans ;
+    for(int i=2;i<sieve.size();i++){
+        if(sieve[i]==0) ans.pb(i) ;
+    }
+    return ans ;
+}
