@@ -1,0 +1,11 @@
+vector<int> tree(100005) ;
+void builtree(vector<int> v,int start,int end,int index){
+    if(start==end){
+       tree[index]=v[start] ;
+       return ;
+    }
+    int mid=(start+end)/2 ;
+    builtree(v,start,mid,2*index) ;
+    builtree(v,mid+1,end,2*index+1) ;
+    tree[index]=max(tree[2*index],tree[2*index+1]) ;
+}
