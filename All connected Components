@@ -1,0 +1,33 @@
+bool compare(vector<int> v1,vector<int> v2){
+    if(v1.size()>v2.size()) return true ;
+    return false ;
+}
+void fill(vector<vector<int>> graph,vector<vector<int>> &connects,int n){
+    vector<int> visited(n+1) ;
+    while(true){
+        vector<int> temp ;
+        queue<int> q ;
+        int start=-1 ;
+        for(int i=1;i<=n;i++){
+            if(visited[i]==0){
+                start=i ;
+                visited[i]=1 ;
+                break ;
+            }
+        }
+        if(start==-1) break ;
+        q.push(start) ;
+        while(!q.empty()){
+            int x=q.front() ;
+            q.pop() ;
+            temp.pb(x) ;
+            for(int i=0;i<graph[x].size();i++){
+                if(visited[graph[x][i]]==1) continue ;
+                q.push(graph[x][i]) ;
+                visited[graph[x][i]]=1 ;
+            }
+        }
+        connects.pb(temp) ;
+    }
+    sort(connects.begin(),connects.end(),compare) ;
+}
